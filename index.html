@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +33,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('logo.png') no-repeat center center;
+            background: url('https://media.discordapp.net/attachments/1362895589163008115/1505106699483353190/a944d430-525e-4179-b868-42b06af3d175.png?ex=6a096b58&is=6a0819d8&hm=20c02cd51a36c8c1b2146dd76fe166fcbb028a55366ae75324a5fef155d8a924&=&format=webp&quality=lossless&width=960&height=960') no-repeat center center;
             background-size: cover;
             filter: blur(8px) brightness(0.3);
             z-index: -1;
@@ -42,7 +43,8 @@
         .container {
             width: 550px;
             background: rgba(15, 15, 20, 0.9);
-            border: 2px solid #cd7f32; /* لون برونزي مثل اللوجو */
+            border: 2px solid #cd7f32;
+            /* لون برونزي مثل اللوجو */
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 0 50px rgba(205, 127, 50, 0.2);
@@ -52,8 +54,15 @@
         }
 
         @keyframes fadeInScale {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .logo-container {
@@ -123,7 +132,7 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 0 0 20px 20px;
             overflow: hidden;
         }
@@ -136,8 +145,13 @@
         }
 
         @keyframes shrink {
-            from { width: 100%; }
-            to { width: 0%; }
+            from {
+                width: 100%;
+            }
+
+            to {
+                width: 0%;
+            }
         }
 
         /* إخفاء مشغل يوتيوب */
@@ -150,32 +164,36 @@
         }
     </style>
 </head>
+
 <body>
     <div class="background"></div>
 
     <div class="container">
         <div class="logo-container">
-            <img src="logo.png" alt="Trigger Hunter Logo">
+            <img src="https://media.discordapp.net/attachments/1362895589163008115/1505106699483353190/a944d430-525e-4179-b868-42b06af3d175.png?ex=6a096b58&is=6a0819d8&hm=20c02cd51a36c8c1b2146dd76fe166fcbb028a55366ae75324a5fef155d8a924&=&format=webp&quality=lossless&width=960&height=960" alt="Trigger Hunter Logo">
         </div>
-        
+
         <h1 class="title">Trigger Hunter</h1>
-        <span class="player-name" id="p-name">F7LKM</span>
+        <span class="player-name" id="p-name">SFA7ISBACK</span>
         <p class="status">سجل دخوله الآن إلى السيرفر</p>
 
-        <a href="https://discord.gg/sZ4Vrxgxy7" target="_blank" class="discord-btn">
+        <div class="discord-btn" style="pointer-events: none; opacity: 0.8; cursor: default;">
             <i class="fab fa-discord"></i>
-            انضم إلى الديسكورد
-        </a>
+            رابط الديسكورد
+        </div>
+
+        <div style="margin-top: 15px; color: #5865F2; font-size: 14px; font-weight: bold; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+            discord.gg/sZ4Vrxgxy7
+        </div>
 
         <div class="progress-container">
             <div class="progress-bar"></div>
         </div>
     </div>
 
-    <!-- مشغل يوتيوب مخفي (يمكنك تغيير رابط الفيديو بالرابط الذي تريده) -->
-    <!-- ملاحظة: المتصفحات تمنع الصوت التلقائي إلا بعد تفاعل المستخدم، لذا قد تحتاج للضغط على الصفحة -->
+    <!-- مشغل يوتيوب مخفي (تم تصحيح الرابط ليعمل بشكل تلقائي) -->
     <iframe id="youtube-player" 
-            src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&loop=1&playlist=jfKfPfyJRdk" 
+            src="https://www.youtube.com/embed/lnr8sXT9IZA?autoplay=1&loop=1&playlist=lnr8sXT9IZA" 
             allow="autoplay">
     </iframe>
 
@@ -187,4 +205,5 @@
         }
     </script>
 </body>
+
 </html>
