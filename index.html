@@ -1,219 +1,356 @@
 <!DOCTYPE html>
 <html lang="ar">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trigger Hunter Notification</title>
+    <title>Hacked by rra</title>
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cairo:wght@400;700;900&display=swap');
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            background: #000;
+            background-color: #050505;
+            color: #0f0;
+            font-family: 'Share Tech Mono', monospace;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            position: relative;
         }
 
-        /* الخلفية بصورة اللوجو مع تضبيب */
-        .background {
+        /* Matrix / High-tech Grid Background */
+        canvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://media.discordapp.net/attachments/1362895589163008115/1505106699483353190/a944d430-525e-4179-b868-42b06af3d175.png?ex=6a096b58&is=6a0819d8&hm=20c02cd51a36c8c1b2146dd76fe166fcbb028a55366ae75324a5fef155d8a924&=&format=webp&quality=lossless&width=960&height=960') no-repeat center center;
-            background-size: cover;
-            filter: blur(8px) brightness(0.3);
-            z-index: -1;
-            transform: scale(1.1);
+            z-index: 0;
+            opacity: 0.3;
         }
 
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, #050505 100%);
+            z-index: 1;
+        }
+
+        /* Premium Glassmorphism Container */
         .container {
-            width: 550px;
-            background: rgba(15, 15, 20, 0.9);
-            border: 2px solid #cd7f32;
-            /* لون برونزي مثل اللوجو */
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 0 50px rgba(205, 127, 50, 0.2);
+            z-index: 2;
+            width: 650px;
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.3); /* Gold accent for luxury */
+            border-radius: 15px;
+            padding: 50px 40px;
             text-align: center;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.1), inset 0 0 20px rgba(255, 215, 0, 0.05);
+            animation: bootUp 1.5s ease-out forwards;
             position: relative;
-            animation: fadeInScale 1s cubic-bezier(0.19, 1, 0.22, 1);
+            /* Removed overflow hidden so the logo can break out the top */
         }
 
-        @keyframes fadeInScale {
-            from {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
+        @keyframes bootUp {
+            0% { transform: scale(0.9) translateY(50px); opacity: 0; filter: blur(10px); }
+            100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0); }
         }
 
         .logo-container {
-            width: 120px;
-            height: 120px;
-            margin: -100px auto 20px;
-            border: 4px solid #cd7f32;
+            width: 180px;
+            height: 180px;
+            margin: -115px auto 30px;
+            border: 3px solid #ffd700;
             border-radius: 50%;
-            background: #111;
+            background: #000;
             overflow: hidden;
-            box-shadow: 0 0 30px rgba(205, 127, 50, 0.5);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+            position: relative;
+            z-index: 3;
         }
 
         .logo-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            transform: scale(0.65); /* Shrinks it to fit safely inside the circle bounds */
+            filter: grayscale(100%) contrast(1.2) sepia(100%) hue-rotate(5deg) saturate(200%);
         }
 
         .title {
-            color: #fff;
-            font-size: 32px;
+            color: #ffd700;
+            font-size: 34px;
             font-weight: 900;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 5px rgba(255, 215, 0, 1);
+            position: relative;
+            display: inline-block;
+            line-height: 1.3;
         }
 
-        .player-name {
-            color: #cd7f32;
-            font-size: 24px;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 20px;
+        /* Subtle Glitch effect so text remains clear */
+        .title::before, .title::after {
+            content: "rra hacked By:nullnext & 7sn & SHESTER & 7rz";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0);
+            opacity: 0.6;
+        }
+        .title::before {
+            left: 1px;
+            text-shadow: -1px 0 red;
+            clip: rect(24px, 650px, 90px, 0);
+            animation: glitch-anim-2 4s infinite linear alternate-reverse;
+        }
+        .title::after {
+            left: -1px;
+            text-shadow: -1px 0 blue;
+            clip: rect(85px, 650px, 140px, 0);
+            animation: glitch-anim 3.5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(13px, 9999px, 86px, 0); }
+            20% { clip: rect(74px, 9999px, 12px, 0); }
+            40% { clip: rect(100px, 9999px, 45px, 0); }
+            60% { clip: rect(34px, 9999px, 94px, 0); }
+            80% { clip: rect(4px, 9999px, 2px, 0); }
+            100% { clip: rect(96px, 9999px, 56px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(56px, 9999px, 23px, 0); }
+            20% { clip: rect(89px, 9999px, 7px, 0); }
+            40% { clip: rect(12px, 9999px, 88px, 0); }
+            60% { clip: rect(76px, 9999px, 34px, 0); }
+            80% { clip: rect(9px, 9999px, 99px, 0); }
+            100% { clip: rect(33px, 9999px, 55px, 0); }
         }
 
         .status {
-            color: #aaa;
-            font-size: 18px;
-            margin-bottom: 30px;
+            color: #ccc;
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-family: 'Share Tech Mono', monospace;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 12px 25px;
+            border-radius: 5px;
+            border-left: 4px solid #ffd700;
+            display: inline-block;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        .ip-highlight {
+            color: #ffd700;
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
         }
 
         .discord-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: #5865F2;
-            color: white;
+            gap: 12px;
+            background: rgba(255, 215, 0, 0.05);
+            color: #ffd700;
             text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 10px;
-            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 5px;
+            border: 2px solid #ffd700;
+            font-weight: 900;
+            font-size: 20px;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.3);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            letter-spacing: 2px;
+            font-family: 'Share Tech Mono', monospace;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .discord-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+            transition: all 0.5s;
+        }
+
+        .discord-btn:hover::before {
+            left: 100%;
         }
 
         .discord-btn:hover {
+            background: rgba(255, 215, 0, 0.15);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(88, 101, 242, 0.5);
-            background: #4752c4;
+            color: #fff;
         }
 
-        /* شريط التقدم */
-        .progress-container {
+        /* Scanline effect */
+        .scanlines {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 0 0 20px 20px;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+            background-size: 100% 4px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        /* Top Progress Bar */
+        .progress-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.5);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
             overflow: hidden;
         }
 
         .progress-bar {
             height: 100%;
-            background: #cd7f32;
-            width: 100%;
-            animation: shrink 10s linear forwards;
+            background: #ffd700;
+            width: 0%;
+            box-shadow: 0 0 15px #ffd700;
+            animation: loading 2s ease-in-out forwards;
         }
 
-        @keyframes shrink {
-            from {
-                width: 100%;
-            }
-
-            to {
-                width: 0%;
-            }
-        }
-
-        /* إخفاء مشغل يوتيوب */
-        #youtube-player {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            opacity: 0;
-            pointer-events: none;
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
         }
     </style>
 </head>
-
 <body>
-    <div class="background"></div>
+    <canvas id="matrix"></canvas>
+    <div class="background-overlay"></div>
+    <div class="scanlines"></div>
 
     <div class="container">
-        <div class="logo-container">
-            <img src="https://media.discordapp.net/attachments/1508985883066634396/1513287702554869821/874d07z.webp?ex=6a27d73f&is=6a2685bf&hm=0806c8360dcb5238b6aaeed2fd6f5e6b90676f4456e76d840c0c9169fa379a37&=&format=webp&width=960&height=960" alt="Like a Sir">
-        </div>
-
-        <h1 class="title">rra hacked By:nullnext & 7sn & SHESTER & 7rz</h1>
-        <span class="player-name" id="p-name"></span>
-        <span class="player-name" id="p-name"></span>
-        <p class="status">Your IP Address: Fetching...</p>
-
-        <div class="discord-btn" style="pointer-events: none; opacity: 0.8; cursor: default;">
-            <i class="fab fa-discord"></i>
-            discord.gg/rra
-        </div>
-
-        <div style="margin-top: 15px; color: #5865F2; font-size: 14px; font-weight: bold; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-            discord.gg/rra
-        </div>
-
         <div class="progress-container">
             <div class="progress-bar"></div>
         </div>
+
+        <div class="logo-container">
+            <img src="https://media.discordapp.net/attachments/1508985883066634396/1513287702554869821/874d07z.webp?ex=6a27d73f&is=6a2685bf&hm=0806c8360dcb5238b6aaeed2fd6f5e6b90676f4456e76d840c0c9169fa379a37&=&format=webp&width=960&height=960" alt="Hacker Logo">
+        </div>
+
+        <h1 class="title">rra hacked By:nullnext & 7sn & SHESTER & 7rz</h1>
+        
+        <div class="status">
+            [SYS.INFO] Target IP: <span class="ip-highlight" id="ip-address">Fetching...</span>
+        </div>
+
+        <br>
+        <a href="https://discord.gg/rra" target="_blank" class="discord-btn">
+            <i class="fab fa-discord"></i> discord.gg/rra
+        </a>
     </div>
 
-    <!-- مشغل صوت مخفي يعمل تلقائياً وبدون إعلانات -->
+    <!-- Background Music -->
     <audio id="bg-music" loop autoplay>
-        <!-- You need to host the direct .mp3 file somewhere like Discord or a raw file host, and replace this link -->
         <source src="https://www.image2url.com/r2/default/audio/1781273981090-3c2f0e2f-4407-429e-a529-67d0d35ebbf1.mp3" type="audio/mpeg">
     </audio>
+
     <script>
-        // Force autoplay just in case the browser blocks it initially
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレゲゼデベペオォコソトノホモヨョロゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+        const alphabet = katakana + latin + nums;
+
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const rainDrops = [];
+        for (let x = 0; x < columns; x++) {
+            rainDrops[x] = 1;
+        }
+
+        const draw = () => {
+            ctx.fillStyle = 'rgba(5, 5, 5, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#ffd700'; // Gold Matrix Rain
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+
+        setInterval(draw, 30);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Fetch IP
+        fetch('https://ipinfo.io/json')
+            .then(response => response.json())
+            .then(data => {
+                let ipDisplay = data.ip;
+                // Typewriter effect for IP
+                let i = 0;
+                document.getElementById('ip-address').innerText = '';
+                let interval = setInterval(() => {
+                    if (i < ipDisplay.length) {
+                        document.getElementById('ip-address').innerText += ipDisplay.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 100);
+            })
+            .catch(error => {
+                document.getElementById('ip-address').innerText = "ERR_CONNECTION_REFUSED";
+                document.getElementById('ip-address').style.color = "red";
+            });
+
+        // Audio autoplay
         window.addEventListener('click', () => {
             document.getElementById('bg-music').play();
         }, { once: true });
     </script>
-
-    <script>
-        fetch('https://ipinfo.io/json')
-            .then(response => response.json())
-            .then(data => {
-                document.querySelector('.status').innerText = `Your IP Address: ${data.ip}`;
-            })
-            .catch(error => {
-                document.querySelector('.status').innerText = "Your IP Address: UNKNOWN";
-            });
-    </script>
 </body>
-
 </html>
