@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +56,8 @@
             background: rgba(10, 10, 10, 0.6);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 215, 0, 0.3); /* Gold accent for luxury */
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            /* Gold accent for luxury */
             border-radius: 15px;
             padding: 50px 40px;
             text-align: center;
@@ -66,8 +68,17 @@
         }
 
         @keyframes bootUp {
-            0% { transform: scale(0.9) translateY(50px); opacity: 0; filter: blur(10px); }
-            100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0); }
+            0% {
+                transform: scale(0.9) translateY(50px);
+                opacity: 0;
+                filter: blur(10px);
+            }
+
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+                filter: blur(0);
+            }
         }
 
         .logo-container {
@@ -87,7 +98,8 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            transform: scale(0.65); /* Shrinks it to fit safely inside the circle bounds */
+            transform: scale(0.65);
+            /* Shrinks it to fit safely inside the circle bounds */
             filter: grayscale(100%) contrast(1.2) sepia(100%) hue-rotate(5deg) saturate(200%);
         }
 
@@ -105,8 +117,9 @@
         }
 
         /* Subtle Glitch effect so text remains clear */
-        .title::before, .title::after {
-            content: "rra hacked By:nullnext & 7sn & SHESTER & 7rz & ABU A7MD ";
+        .title::before,
+        .title::after {
+            content: "abos hacked By:SFA7ISBACK ";
             position: absolute;
             top: 0;
             left: 0;
@@ -115,12 +128,14 @@
             background: rgba(10, 10, 10, 0);
             opacity: 0.6;
         }
+
         .title::before {
             left: 1px;
             text-shadow: -1px 0 red;
             clip: rect(24px, 650px, 90px, 0);
             animation: glitch-anim-2 4s infinite linear alternate-reverse;
         }
+
         .title::after {
             left: -1px;
             text-shadow: -1px 0 blue;
@@ -129,20 +144,55 @@
         }
 
         @keyframes glitch-anim {
-            0% { clip: rect(13px, 9999px, 86px, 0); }
-            20% { clip: rect(74px, 9999px, 12px, 0); }
-            40% { clip: rect(100px, 9999px, 45px, 0); }
-            60% { clip: rect(34px, 9999px, 94px, 0); }
-            80% { clip: rect(4px, 9999px, 2px, 0); }
-            100% { clip: rect(96px, 9999px, 56px, 0); }
+            0% {
+                clip: rect(13px, 9999px, 86px, 0);
+            }
+
+            20% {
+                clip: rect(74px, 9999px, 12px, 0);
+            }
+
+            40% {
+                clip: rect(100px, 9999px, 45px, 0);
+            }
+
+            60% {
+                clip: rect(34px, 9999px, 94px, 0);
+            }
+
+            80% {
+                clip: rect(4px, 9999px, 2px, 0);
+            }
+
+            100% {
+                clip: rect(96px, 9999px, 56px, 0);
+            }
         }
+
         @keyframes glitch-anim-2 {
-            0% { clip: rect(56px, 9999px, 23px, 0); }
-            20% { clip: rect(89px, 9999px, 7px, 0); }
-            40% { clip: rect(12px, 9999px, 88px, 0); }
-            60% { clip: rect(76px, 9999px, 34px, 0); }
-            80% { clip: rect(9px, 9999px, 99px, 0); }
-            100% { clip: rect(33px, 9999px, 55px, 0); }
+            0% {
+                clip: rect(56px, 9999px, 23px, 0);
+            }
+
+            20% {
+                clip: rect(89px, 9999px, 7px, 0);
+            }
+
+            40% {
+                clip: rect(12px, 9999px, 88px, 0);
+            }
+
+            60% {
+                clip: rect(76px, 9999px, 34px, 0);
+            }
+
+            80% {
+                clip: rect(9px, 9999px, 99px, 0);
+            }
+
+            100% {
+                clip: rect(33px, 9999px, 55px, 0);
+            }
         }
 
         .status {
@@ -155,7 +205,7 @@
             border-radius: 5px;
             border-left: 4px solid #ffd700;
             display: inline-block;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
         }
 
         .ip-highlight {
@@ -214,7 +264,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1));
             background-size: 100% 4px;
             z-index: 10;
             pointer-events: none;
@@ -242,12 +292,21 @@
         }
 
         @keyframes loading {
-            0% { width: 0%; }
-            50% { width: 70%; }
-            100% { width: 100%; }
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 70%;
+            }
+
+            100% {
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
     <canvas id="matrix"></canvas>
     <div class="background-overlay"></div>
@@ -263,21 +322,22 @@
             <img src="./logo.webp" alt="Hacker Logo">
         </div>
 
-        <h1 class="title">rra hacked By:nullnext & 7sn & SHESTER & 7rz & ABU A7MD</h1>
-        
+        <h1 class="title">abos hacked By:SFA7ISBACK</h1>
+
         <div class="status">
             [SYS.INFO] Target IP: <span class="ip-highlight" id="ip-address">Fetching...</span>
         </div>
 
         <br>
-        <a href="https://discord.gg/rra" target="_blank" class="discord-btn">
-            <i class="fab fa-discord"></i> discord.gg/rra
+        <a href="https://discord.gg/abos" target="_blank" class="discord-btn">
+            <i class="fab fa-discord"></i> discord.gg/abos
         </a>
     </div>
 
     <!-- Background Music -->
     <audio id="bg-music" loop autoplay>
-        <source src="https://www.image2url.com/r2/default/audio/1781273981090-3c2f0e2f-4407-429e-a529-67d0d35ebbf1.mp3" type="audio/mpeg">
+        <source src="https://www.image2url.com/r2/default/audio/1784055348958-5f750957-2eeb-46bb-8c95-f1709fc27d1d.mp3"
+            type="audio/mpeg">
     </audio>
 
     <script>
@@ -354,4 +414,5 @@
         }, { once: true });
     </script>
 </body>
+
 </html>
